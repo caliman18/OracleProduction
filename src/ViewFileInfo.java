@@ -34,7 +34,7 @@ import java.io.Reader;
       } catch (FileNotFoundException e) {
         e.printStackTrace();
       } catch (IOException e) {
-        System.out.println("Can not read");
+        System.out.println("Cannot read");
       }
 
     }
