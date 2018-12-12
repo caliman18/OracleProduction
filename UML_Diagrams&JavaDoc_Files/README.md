@@ -5,9 +5,12 @@ This is a java program template to store/display a production line items for mul
 However, this is a flexible structure that could be used in any production line. 
 This structure allows easy modification to handle different products. 
 This program stores/displays various fields/variables,such as: 
-int serialNumber 
-String manufacturer 
-Date manufacuredOn 
-String name 
+int serialNumber,
+String manufacturer,
+Date manufacuredOn, and
+String name. 
+
+## Documentation
+[JavaDoc](https://www.astralminerals.com/OracleProduction)
 
 End of description. 
