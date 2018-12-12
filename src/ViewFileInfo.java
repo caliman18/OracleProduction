@@ -1,7 +1,10 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
 
 /**
  * @author David Souza
@@ -9,41 +12,31 @@ import java.nio.file.Paths;
  * @since 10/23/2018
  * fileName: ViewFileInfo.java
  */
-public class ViewFileInfo {
+
 
   /**
    * Reading data from file and printing it into the console.
    *
    * @param args
    */
-  public static void main(String[] args) {
+  public class ViewFileInfo {
 
-    Path p = Paths.get("C:\\LineTests\\TestResults.txt");
-    BufferedReader reader;
-
-    try {
-
-      // Starting file.
-      reader = new BufferedReader(new FileReader(p.toFile()));
+    public static void main(String[] args) {
 
       try {
-        String text;
-        // run until file ends..
-        while((text = reader.readLine()) != null) {
-
-          // Printing..
-          System.out.println(text);
-
+        InputStream inputStream = new FileInputStream(
+            "/Users/luism/TestResults.txt");
+        Reader fr = new InputStreamReader(inputStream, "UTF-8");
+        int i;
+        while ((i = fr.read()) != -1) {
+          System.out.print((char) i);
         }
+      } catch (FileNotFoundException e) {
+        e.printStackTrace();
+      } catch (IOException e) {
+        System.out.println("Cant read");
+      }
 
-      }catch(Exception e) {}
-
-      reader.close();
-
-    } catch (Exception e) {
-      e.printStackTrace();
     }
 
   }
-
-}

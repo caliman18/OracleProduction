@@ -4,6 +4,13 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.file.Files;
+
+
 
 /**
  * @author David Souza
@@ -11,79 +18,73 @@ import java.util.ArrayList;
  * @since 10/23/2018
  * fileName: ProcessFiles.java
  */
-public class ProcessFiles {
 
-  // Attributes
+
+  /**
+   * Paths for file
+   */
+  public class ProcessFiles {
   private Path p;
   private Path p2;
   private Path p3;
 
-  /**
-   * Constructor to set
-   * paths.
-   */
-  public ProcessFiles() {
-
-    p = Paths.get("C:\\LineTests");
-    p2 = Paths.get("C:\\LineTests\\TestResults.txt");
-    p3 = Paths.get("C:\\LineTests\\");
+    public ProcessFiles(EmployeeInfo e, ArrayList<Product> pr) {
+      p = Paths.get("/Users/davids");
+      p2 = Paths.get("TestResults.txt");
+      p3 = p.resolve(p2);
+      CreateDirectory();
+    try {
+      WriteFile(e);
+      WriteFile(pr);
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
 
   }
 
-  /**
-   * To create directories if they don't exists..
-   */
   private void CreateDirectory() {
-
-    // Creating LineTests directory..
-    if(!p.toFile().exists()) {
-      p.toFile().mkdir();
-    }
-
-    // Creating files..
-    if(!p2.toFile().exists()) {
+    if (Files.notExists(p)) {
       try {
-        p2.toFile().createNewFile();
+        Files.createDirectories(p);
+        System.out.println("Directory Created");
       } catch (IOException e) {
-        e.printStackTrace();
+        System.out.println("Can't Create Directory");
       }
     }
-
   }
 
   /**
-   * Writing employee data into the file.
-   *
-   * @param emp
-   * @throws IOException
+   * @param emp Employee Info
+   * @throws IOException if file cant be written to
    */
-  public void WriteFile(EmployeeInfo emp) throws IOException{
+  public void WriteFile(EmployeeInfo emp) throws IOException {
 
-    CreateDirectory();
+//    p2 = Paths.get(p.toUri() + "TestResults.txt");
+//    Files.write(p2,emp.toString().getBytes());
 
-    PrintWriter writer = new PrintWriter(p2.toFile());
-    writer.println(emp.toString());
-    writer.close();
+    FileWriter writer = new FileWriter(p3.toString(), true);
+    PrintWriter printWriter = new PrintWriter(writer);
 
+    printWriter.println(emp.toString());
+
+    printWriter.close();
   }
 
   /**
-   * Writing all products into the file.
-   *
-   * @param products
-   * @throws IOException
+   * @param products array list of products
+   * @throws IOException if file cant be written to
    */
   public void WriteFile(ArrayList<Product> products) throws IOException {
 
-    CreateDirectory();
-    PrintWriter writer = new PrintWriter(new FileWriter(p2.toFile(), true));
 
-    for(Product p: products) {
-      writer.println(p.toString());
-    }
+    //FileWriter  writer = new FileWriter(p3.toString(),true);
+    File file = new File(p3.toString());
+    Writer writer = new OutputStreamWriter(new FileOutputStream(file), "UTF-8");
+    PrintWriter printWriter = new PrintWriter(writer);
 
-    writer.close();
+    printWriter.println(products.toString());
 
+    printWriter.close();
   }
 
 }
