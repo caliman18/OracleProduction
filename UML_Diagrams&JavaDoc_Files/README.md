@@ -13,4 +13,7 @@ String name.
 ## Documentation
 [JavaDoc](https://www.astralminerals.com/OracleProduction)
 
+[UML DIAGRAM](OracleProduction/UML_Diagrams&JavaDoc_Files/OracleProduction Diagrams.pdf)
+      
+
 End of description. 
