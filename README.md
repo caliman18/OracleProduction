@@ -4,10 +4,18 @@ Description summary: production template in Java for creating and recording all 
 This is a java program template to store/display a production line items for multimedia devices which include music and movie players.
 However, this is a flexible structure that could be used in any production line. 
 This structure allows easy modification to handle different products. 
-This program stores/displays various fields/variables,such as: 
-int serialNumber 
-String manufacturer 
-Date manufacuredOn 
-String name 
+
+This project was created by Oracle and assigned by Prof. Vanselow at FGCU to his programming class. 
+
+
+## Documentation
+[JavaDoc](https://www.astralminerals.com/OracleProduction)
+
+[JavaDoc](https://eaglefgcu-my.sharepoint.com/:f:/g/personal/dcsouza3418_eagle_fgcu_edu/Es7yVYcrGw9HocvS6ilDujYBm9aDioYx_ESklHjISjBgbg?e=2FllrW)
+
+[UML DIAGRAM](https://github.com/caliman18/OracleProduction/blob/master/UML_Diagrams%26JavaDoc_Files/OracleProduction%20Diagrams.pdf)
+
+[UML DIAGRAM - EXTENTED VIEW](https://github.com/caliman18/OracleProduction/blob/master/UML_Diagrams%26JavaDoc_Files/UML%20Diagrams.png)
+
 
 End of description. 
