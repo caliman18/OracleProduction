@@ -9,7 +9,7 @@ This project was created by Oracle and assigned by Prof. Vanselow at FGCU to his
 
 
 ## Documentation
-[JavaDoc](https://github.com/caliman18/OracleProduction/blob/master/Docs/index-files/index-1.html)
+[JavaDoc](https://github.com/caliman18/OracleProduction/blob/master/Docs/index.html)
 
 [UML DIAGRAM](https://github.com/caliman18/OracleProduction/blob/master/UML_Diagrams%26JavaDoc_Files/OracleProduction%20Diagrams.pdf)
 
