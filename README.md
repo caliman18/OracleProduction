@@ -16,5 +16,7 @@ String name
 
 [UML DIAGRAM](https://github.com/caliman18/OracleProduction/blob/master/UML_Diagrams%26JavaDoc_Files/OracleProduction%20Diagrams.pdf)
 
+[UML DIAGRAM - EXTENTED VIEW](https://github.com/caliman18/OracleProduction/blob/master/UML_Diagrams%26JavaDoc_Files/UML%20Diagrams.png)
+
 
 End of description. 
