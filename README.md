@@ -10,4 +10,11 @@ String manufacturer
 Date manufacuredOn 
 String name 
 
+
+## Documentation
+[JavaDoc](https://www.astralminerals.com/OracleProduction)
+
+[UML DIAGRAM](https://github.com/caliman18/OracleProduction/blob/master/UML_Diagrams%26JavaDoc_Files/OracleProduction%20Diagrams.pdf)
+
+
 End of description. 
